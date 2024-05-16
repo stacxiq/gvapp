@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greenvilllage/global/constants/animations.dart';
+import 'package:greenvilllage/global/constants/constants.dart';
 import 'package:greenvilllage/pages/tabs/tabs.dart';
+import 'package:hive/hive.dart';
 
 import '../../constants/functions.dart';
 import 'custom_circular_progress.dart';
@@ -82,12 +84,20 @@ class TextWithButtonAndIndicator extends StatelessWidget {
               right: 10,
               top: 10,
               child: GestureDetector(
-                onTap: () => currentIndex == 2
-                    ? {Get.offAll(TabsScreen())}
-                    : navigationViaButton(
-                        currentIndex,
-                        controller,
-                      ),
+                onTap: () {
+                  Box settingsBox = Get.find<Box>(tag: SETTINGS);
+
+                  if (currentIndex == 1) {
+                    settingsBox.put('isFirstTime', false).then((value) {
+                      Get.offAll(() => const TabsScreen());
+                    });
+                  } else {
+                    navigationViaButton(
+                      currentIndex,
+                      controller,
+                    );
+                  }
+                },
                 child: AnimatedContainer(
                   duration: AppAnimations.defaultDuration,
                   decoration: BoxDecoration(

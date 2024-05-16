@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class WelcomeSlide extends StatelessWidget {
   const WelcomeSlide({
@@ -11,17 +12,15 @@ class WelcomeSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: SafeArea(
-        bottom: false,
-        left: false,
-        right: false,
-        child: AspectRatio(
-          aspectRatio: 300 / 300,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image(
-              image: AssetImage(path),
-            ),
+      width: context.width * 0.8,
+      height: context.height,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: FittedBox(
+          fit: BoxFit.fill,
+          child: Image(
+            image: AssetImage(path),
+            fit: BoxFit.cover,
           ),
         ),
       ),

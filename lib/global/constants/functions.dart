@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:greenvilllage/global/constants/constants.dart';
 import 'package:greenvilllage/pages/tabs/tabs.dart';
+import 'package:hive/hive.dart';
 
 Color getColorFromIndex(int currentIndex) {
   switch (currentIndex) {
@@ -9,7 +11,7 @@ Color getColorFromIndex(int currentIndex) {
     case 1:
       return Colors.green;
     case 2:
-      return Color(0xff28635F);
+      return const Color(0xff28635F);
     default:
       return Colors.red;
   }
@@ -18,11 +20,11 @@ Color getColorFromIndex(int currentIndex) {
 String getCurrentTitle(int currentIndex) {
   switch (currentIndex) {
     case 0:
-      return 'گرين فيلج';
+      return 'گرين ڤلج';
     case 1:
-      return 'گرين فيلج';
+      return 'گرين ڤلج';
     case 2:
-      return 'گرين فيلج';
+      return 'گرين ڤلج';
     default:
       return '';
   }
@@ -31,7 +33,7 @@ String getCurrentTitle(int currentIndex) {
 String getCurrentSubtext(int currentIndex) {
   switch (currentIndex) {
     case 0:
-      return 'حياة تليق بك';
+      return 'احجز فيلتك الآن وتمتع بأفضل الخدمات';
     case 1:
       return 'تقدم لك خدمات تليق بك';
     case 2:
@@ -44,13 +46,20 @@ String getCurrentSubtext(int currentIndex) {
 void navigateToNextPage(
   int currentIndex,
   PageController controller,
-) =>
-    currentIndex != 2
-        ? controller.nextPage(
-            duration: const Duration(milliseconds: 1500),
-            curve: Curves.elasticOut,
-          )
-        : Get.offAll(TabsScreen());
+) {
+  Box settingsBox = Get.find<Box>(tag: SETTINGS);
+  if (currentIndex != 2) {
+    controller.nextPage(
+      duration: const Duration(milliseconds: 1500),
+      curve: Curves.elasticOut,
+    );
+  } else {
+    settingsBox.put('isFirstTime', false).then((value) {
+      Get.offAll(() => const TabsScreen());
+    });
+  }
+  ;
+}
 
 Tween<double> getProgressOnCurrentIndex(int currentIndex) {
   switch (currentIndex) {
@@ -62,13 +71,9 @@ Tween<double> getProgressOnCurrentIndex(int currentIndex) {
     case 1:
       return Tween<double>(
         begin: 0.5,
-        end: 0.75,
-      );
-    case 2:
-      return Tween<double>(
-        begin: 0.75,
         end: 1,
       );
+
     default:
       return Tween<double>(
         begin: 0,
@@ -103,3 +108,7 @@ void navigationViaButton(
             duration: const Duration(milliseconds: 2000),
             curve: Curves.easeOutExpo,
           );
+
+getImage(String path) {
+  return 'https://dashboard.gviraqapp.com/storage/' + path;
+}

@@ -15,7 +15,7 @@ class Indicator extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
-        3,
+        2,
         (index) => Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 4,

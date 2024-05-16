@@ -1,63 +1,46 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
+import 'package:greenvilllage/controllers/settings_controller.dart';
+import 'package:greenvilllage/global/constants/constants.dart';
 import 'package:greenvilllage/pages/login/login.dart';
+import 'package:greenvilllage/pages/profile/profile.dart';
 import 'package:greenvilllage/pages/register/register.dart';
+import 'package:hive/hive.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({Key? key}) : super(key: key);
-
+  SettingsPage({Key? key}) : super(key: key);
+  Box tokenBox = Get.find<Box>(tag: TOKEN);
+  SettingsXController settingsController = Get.put(SettingsXController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("الإعدادات"),
-      ),
-      backgroundColor: const Color(0xfff6f6f6),
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 400),
-          child: ListView(
-            children: [
-              // _SingleSection(
-              //   title: "المستخدم",
-              //   children: [
-              //     _CustomListTile(
-              //       title: "تسجيل",
-              //       icon: CupertinoIcons.person_3,
-              //       onTap: () {
-              //         Get.to(() => RegisterPage());
-              //       },
-              //     ),
-              //     _CustomListTile(
-              //       title: "تسجيل دخول",
-              //       icon: CupertinoIcons.person,
-              //       onTap: () {
-              //         Get.to(() => LoginPage());
-              //       },
-              //     ),
-              //   ],
-              // ),
-              _SingleSection(
-                title: "عام",
-                children: [
-                  const _CustomListTile(
-                      title: "عن التطبيق",
-                      icon: CupertinoIcons.device_phone_portrait),
-                  _CustomListTile(
-                      title: "وضع الداكن",
-                      icon: CupertinoIcons.moon,
-                      trailing:
-                          CupertinoSwitch(value: false, onChanged: (value) {})),
-                  const _CustomListTile(
-                      title: "مشاركة التطبيق", icon: CupertinoIcons.share),
-                  const _CustomListTile(
-                      title: "سياسة الخصوصية",
-                      icon: CupertinoIcons.lock_shield),
-                ],
-              ),
-            ],
-          ),
+          child: tokenBox.get(TOKEN, defaultValue: null) == null
+              ? ListView(
+                  children: [
+                    _SingleSection(title: "المستخدم", children: [
+                      _CustomListTile(
+                        title: "تسجيل",
+                        icon: CupertinoIcons.person_3,
+                        onTap: () {
+                          Get.to(() => RegisterPage());
+                        },
+                      ),
+                      _CustomListTile(
+                        title: "تسجيل دخول",
+                        icon: CupertinoIcons.person,
+                        onTap: () {
+                          Get.to(() => LoginPage());
+                        },
+                      ),
+                    ]),
+                  ],
+                )
+              : ProfileScreen(),
         ),
       ),
     );
@@ -114,7 +97,10 @@ class _SingleSection extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          color: Colors.white,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          ),
           child: Column(
             children: children,
           ),

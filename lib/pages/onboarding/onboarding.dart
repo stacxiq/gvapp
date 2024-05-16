@@ -39,27 +39,35 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Gap(context.height * 0.2),
-          Expanded(
-            child: PageViewBuilder(
-              currentColor: _currentColor,
-              controller: _controller,
+      body: SizedBox(
+        width: context.width,
+        height: context.height,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Gap(context.height * 0.2),
+            Expanded(
+              flex: 2,
+              child: PageViewBuilder(
+                currentColor: _currentColor,
+                controller: _controller,
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 42,
-          ),
-          Expanded(
-            child: TextWithButtonAndIndicator(
-              currentIndex: _currentIndex,
-              currentColor: _currentColor,
-              controller: _controller,
+            const SizedBox(
+              height: 8,
             ),
-          ),
-        ],
+            Expanded(
+              child: TextWithButtonAndIndicator(
+                currentIndex: _currentIndex,
+                currentColor: _currentColor,
+                controller: _controller,
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+          ],
+        ),
       ),
     );
   }

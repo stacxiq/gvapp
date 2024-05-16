@@ -1,11 +1,19 @@
+import 'dart:developer';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:greenvilllage/global/constants/functions.dart';
+
+import 'package:greenvilllage/models/service.dart';
 
 class ServiceDetails extends StatelessWidget {
-  const ServiceDetails({super.key, required this.title, required this.image});
-  final String title;
-  final String image;
+  final ServiceModel service;
+  const ServiceDetails({
+    Key? key,
+    required this.service,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +28,12 @@ class ServiceDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Hero(
-                  tag: title,
+                  tag: service.title,
                   child: SizedBox(
                     height: context.height * 0.3,
                     width: context.width,
-                    child: Image.asset(
-                      image,
+                    child: CachedNetworkImage(
+                      imageUrl: getImage(service.image),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -37,14 +45,14 @@ class ServiceDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        title,
+                        service.title,
                         style: context.textTheme.headlineSmall!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Gap(context.height * 0.01),
-                      const Text(
-                        'Reprehenderit nisi anim minim ullamco nulla ipsum. In et tempor tempor ipsum id do culpa veniam reprehenderit et quis. Adipisicing consectetur et amet in velit enim sunt adipisicing aliqua nulla nostrud commodo mollit. Eu eu aute amet culpa eiusmod laboris eu fugiat enim voluptate et exercitation ullamco eiusmod. Magna ad excepteur deserunt mollit culpa irure Lorem qui ullamco esse qui nulla proident commodo. Et aute fugiat non excepteur est. Mollit ut in sit eu. Enim aute pariatur ex elit non et est aute aliquip aliquip laboris do qui. Consequat officia proident ex laboris ullamco sint ad. Fugiat nisi in aute pariatur cillum reprehenderit nulla ullamco do non pariatur exercitation elit. Nostrud ea exercitation velit adipisicing est laborum quis ea nisi dolor esse incididunt labore. Adipisicing id eu ipsum nulla laborum adipisicing eu ad incididunt consectetur quis sunt. Ut commodo dolore aliqua ipsum aliquip laboris eu ipsum ad laborum aliqua amet.',
+                      Text(
+                        service.content,
                         textAlign: TextAlign.justify,
                         style: TextStyle(color: Colors.grey),
                       )
@@ -55,5 +63,83 @@ class ServiceDetails extends StatelessWidget {
             ),
           ),
         ));
+  }
+
+  getDesc(String title) {
+    switch (title) {
+      case "THE 200 M2 HOUSES":
+        return '''
+إجمالي مساحة البناء: 215.5 متر مربع
+طابقین: صالة مع 4 غرف
+
+الطابق الأرضي:
+
+الكراج + الممشى: 43 متر مربع
+الحدیقة: 20 متر مربع
+صالة: 19.6 متر مربع
+غرفة المعیشة: 24.3 متر مربع
+المطبخ: 8.9 متر مربع
+غرفة النوم الماستر: 18.4 متر مربع
+
+الطابق الأول:
+غرفة نوم: 18 متر مربع
+غرفة نوم ماستر: 19.6 متر مربع
+الشرفة: 9.87 متر مربع
+''';
+
+      case 'THE 240 M2 HOUSES':
+        return '''
+إجمالي مساحة البناء :244 متر مربع
+طابقین: صالة مع 4 غرف
+
+الطابق الأرضي:
+
+الكراج + الممشى: 80 متر مربع
+الحدیقة: 16 متر مربع
+صالة: 22.5 متر مربع
+غرفة المعیشة : 29.3 متر مربع
+المطبخ: 9.45 متر مربع
+غرفة النوم الماستر 15.75 متر مربع
+
+الطابق الأول:
+غرفة نوم: 15.75 متر مربع
+غرفة نوم ماستر: 22.5 متر مربع
+غرفة نوم: 20.46 متر مربع
+الشرفة: 10.34 متر مربع
+''';
+
+      default:
+        return '''
+إجمالي مساحة البناء :300 متر مربع
+طابقین: صالة مع 4 غرف
+
+الطابق الأرضي:
+الكراج + الممشى: 109 متر مربع
+الحدیقة: 23 متر مربع
+الصالة: 33 متر مربع
+غرفة المعیشة : 35.42 متر مربع
+المطبخ: 13.34 متر مربع
+غرفة النوم الماستر 19.2 متر مربع
+
+الطابق الأول:
+غرفة نوم: 19.2 متر مربع
+غرفة نوم ماستر: 20 متر مربع
+غرفة نوم: 25.3 متر مربع
+الشرفة: 21.46 متر مربع
+''';
+    }
+  }
+
+  getTitle(String title) {
+    switch (title) {
+      case "THE 200 M2 HOUSES":
+        return 'منازل نوع 200 متر مربع';
+
+      case 'THE 240 M2 HOUSES':
+        return 'منازل نوع 240 متر مربع';
+
+      default:
+        return 'منازل نوع 300 متر مربع';
+    }
   }
 }

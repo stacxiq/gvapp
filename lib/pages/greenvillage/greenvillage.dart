@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 class GreenViliage extends StatelessWidget {
@@ -9,11 +10,12 @@ class GreenViliage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'گرين فيلج',
+          'گرين ڤلج',
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: context.height * 0.3,
@@ -29,7 +31,7 @@ class GreenViliage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Occaecat nostrud enim in irure id elit ullamco aliquip et exercitation exercitation ullamco. Eiusmod exercitation ipsum velit officia do. Sit sint ad ullamco do laboris nisi commodo esse anim excepteur mollit. Consectetur ad magna sint nisi nostrud. Elit minim reprehenderit exercitation eiusmod excepteur mollit deserunt sit commodo Lorem aliquip id. Minim exercitation nulla veniam veniam. Nisi excepteur velit aliquip velit voluptate commodo minim aute veniam sunt officia reprehenderit. Culpa mollit incididunt sit incididunt minim mollit esse cupidatat cillum exercitation adipisicing tempor id reprehenderit. Dolore irure laboris ex minim ipsum ad irure in do ex sint. Officia ea incididunt in excepteur.',
+                'مجمع سكني بنظام فیلا وبناء ھیكلي یتمیز بموقعه الاستراتیجي الكائن في (الأنبار -الرمادي - خلف جامعة الأنبار) یتضمن المشروع 514 وحدة سكنیة بمساحات مختلفة وخدمات متنوعة منها المشاریع الخدمیة والتجاریة التي تلبي جمیع احتیاجات الساكنين، استخدمت أجود المواد وأحدث الطرق العالمیة لتشیید المجمع بخبرات دولیة ومحلیة كبیرة من قبل المختصین في مجال التطویر العقاري. \nعلمآ أن المساحة الإجمالیة للمشروع 273392 متر مربع ومساحة البناء 115040 متر مربع',
                 style: context.textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: context.theme.primaryColor,
@@ -37,6 +39,171 @@ class GreenViliage extends StatelessWidget {
                 textAlign: TextAlign.justify,
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                    color: Color(0xffF5BB2E),
+                    height: context.height * 0.025,
+                    width: context.width * 0.02,
+                  ),
+                  Gap(context.width * 0.015),
+                  Text(
+                    'أنواع الوحدات السكنیة من حیث العدد والمساحة',
+                    style: context.textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.theme.primaryColor,
+                    ),
+                    textAlign: TextAlign.justify,
+                    textDirection: TextDirection.rtl,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                ' 1 -  300 متر مربع - 310 وحدة سكنیة .',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                ' 2 -  240 متر مربع - 136 وحدة سكنیة .',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                ' 3 -  200 متر مربع - 68 وحدة سكنیة .',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                    color: Color(0xffF5BB2E),
+                    height: context.height * 0.025,
+                    width: context.width * 0.02,
+                  ),
+                  Gap(context.width * 0.015),
+                  Text(
+                    'یتضمن المشروع',
+                    style: context.textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.theme.primaryColor,
+                    ),
+                    textAlign: TextAlign.justify,
+                    textDirection: TextDirection.rtl,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                ' 1 -  مناطق استراحة.',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                ' 2 -  مطاعم وكافیھات',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                ' 3 - محلات تجاریة',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '  4 - مساحات خضراء',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '  5 - مسجد',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '  6 - مدرسة',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '  7 - اماكن مخصصة للأطفال',
+                style: context.textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: context.theme.primaryColor,
+                ),
+                textAlign: TextAlign.justify,
+                textDirection: TextDirection.rtl,
+              ),
+            ),
+            Gap(context.height * 0.02),
           ],
         ),
       ),

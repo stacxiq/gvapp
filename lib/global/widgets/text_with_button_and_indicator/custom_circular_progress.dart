@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:greenvilllage/global/constants/animations.dart';
 import 'package:greenvilllage/global/constants/functions.dart';
@@ -21,7 +20,7 @@ class CustomCircularProgress extends StatelessWidget {
         builder: (_, value, __) => CircularProgressIndicator(
           backgroundColor: Colors.grey.withOpacity(0.2),
           value: value,
-          strokeWidth: 2,
+          strokeWidth: 1,
           valueColor: AlwaysStoppedAnimation(
             getColorFromIndex(currentIndex),
           ),

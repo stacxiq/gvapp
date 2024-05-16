@@ -18,13 +18,10 @@ class PageViewBuilder extends StatelessWidget {
       controller: controller,
       children: const [
         WelcomeSlide(
-          path: 'assets/images/logo.png',
+          path: 'assets/images/4.png',
         ),
         WelcomeSlide(
-          path: 'assets/images/0M0A0175.jpg',
-        ),
-        WelcomeSlide(
-          path: 'assets/images/0M0A0205.jpg',
+          path: 'assets/images/a-6.png',
         ),
       ],
     );
