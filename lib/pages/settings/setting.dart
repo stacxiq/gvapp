@@ -7,7 +7,6 @@ import 'package:greenvilllage/pages/login/login.dart';
 import 'package:greenvilllage/pages/profile/profile.dart';
 import 'package:greenvilllage/pages/register/register.dart';
 import 'package:hive/hive.dart';
-import 'package:iconsax/iconsax.dart';
 
 class SettingsPage extends StatelessWidget {
   SettingsPage({Key? key}) : super(key: key);
@@ -92,7 +91,7 @@ class _SingleSection extends StatelessWidget {
           child: Text(
             title.toUpperCase(),
             style:
-                Theme.of(context).textTheme.headline3?.copyWith(fontSize: 16),
+                Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: 16),
           ),
         ),
         Container(

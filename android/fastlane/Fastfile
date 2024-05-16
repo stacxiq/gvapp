@@ -22,14 +22,10 @@ platform :android do
     sh "flutter pub get"
     sh "flutter build apk --release --no-tree-shake-icons"
     firebase_app_distribution(
-      # The path to the APK file to distribute
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
-      # The Firebase App ID
       app: "1:902174519201:android:bcc35bbe6fa40f5ff1e5e0",
-
       firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
       groups: "greenvillageteam",
-      # The release notes for this build
       release_notes: "This release contains a lot of changes"
     )
   end
