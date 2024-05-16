@@ -1,0 +1,40 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Deploy a new version to firebase app distribution"
+  lane :deploy do
+    sh "flutter clean"
+    sh "flutter build apk --release"
+    firebase_app_distribution(
+      # The path to the APK file to distribute
+      android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+      # The Firebase App ID
+      app: "1:902174519201:android:bcc35bbe6fa40f5ff1e5e0",
+
+      firebase_cli_token: "1//03UFyTz_082_6CgYIARAAGAMSNwF-L9IrytT7-ogAYX3G7le4g4WkyNpK4btvYsW3LndzuLW44cgbv65jxAy1QCNBn_N_YmFlul4",
+      # The groups to distribute the APK to
+      groups: "greenvillageteam",
+      # The release notes for this build
+      release_notes: "This release contains a lot of changes"
+    )
+  end
+
+
+
+
+end

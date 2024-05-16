@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "902174519201",
+    "project_id": "greenvillage-a5580",
+    "storage_bucket": "greenvillage-a5580.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902174519201:android:bcc35bbe6fa40f5ff1e5e0",
+        "android_client_info": {
+          "package_name": "com.advicts.greenvillage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902174519201-lj87fff3ujl7b43341c6ujnhprkbq3jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc4u_ahi96rq6t14c6IPFGRjzJW7DvGzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902174519201-lj87fff3ujl7b43341c6ujnhprkbq3jo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902174519201-i4p35qnu15qa5jcpnr84hkrrsakjfi9f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.advicts.greenvilllage.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902174519201:android:b040fc19330dcaedf1e5e0",
+        "android_client_info": {
+          "package_name": "com.advicts.greenvilllage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902174519201-lj87fff3ujl7b43341c6ujnhprkbq3jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc4u_ahi96rq6t14c6IPFGRjzJW7DvGzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902174519201-lj87fff3ujl7b43341c6ujnhprkbq3jo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902174519201-i4p35qnu15qa5jcpnr84hkrrsakjfi9f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.advicts.greenvilllage.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902174519201:android:28e4464cda019cd9f1e5e0",
+        "android_client_info": {
+          "package_name": "com.advicts.greenvillage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902174519201-lj87fff3ujl7b43341c6ujnhprkbq3jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc4u_ahi96rq6t14c6IPFGRjzJW7DvGzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902174519201-lj87fff3ujl7b43341c6ujnhprkbq3jo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902174519201-i4p35qnu15qa5jcpnr84hkrrsakjfi9f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.advicts.greenvilllage.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
