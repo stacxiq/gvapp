@@ -26,7 +26,7 @@ platform :android do
       # The Firebase App ID
       app: "1:902174519201:android:bcc35bbe6fa40f5ff1e5e0",
 
-      firebase_cli_token: "1//03UFyTz_082_6CgYIARAAGAMSNwF-L9IrytT7-ogAYX3G7le4g4WkyNpK4btvYsW3LndzuLW44cgbv65jxAy1QCNBn_N_YmFlul4",
+      firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
       # The groups to distribute the APK to
       groups: "greenvillageteam",
       # The release notes for this build
